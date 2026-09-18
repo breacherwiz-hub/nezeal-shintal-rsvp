@@ -1,0 +1,24 @@
+.field {
+  width: 100%;
+  border: 1px solid #dce2e3;
+  background: rgba(255,255,255,.78);
+  border-radius: 14px;
+  padding: 13px 15px;
+  outline: none;
+  font-size: 14px;
+  transition: .2s ease;
+}
+.field:focus { border-color:#8ea8b4; box-shadow:0 0 0 4px rgba(142,168,180,.12); }
+.seat-field {
+  border: 1px solid #dce2e3;
+  background:#fff;
+  border-radius:10px;
+  padding:9px 11px;
+  width:190px;
+  outline:none;
+  font-size:12px;
+}
+.seat-field:focus { border-color:#8ea8b4; }
+.pill { display:inline-flex; border-radius:999px; padding:6px 9px; font-size:10px; }
+.pill.yes { background:#e8eef0; color:#607b89; }
+.pill.no { background:#f2e9e6; color:#8b7067; }

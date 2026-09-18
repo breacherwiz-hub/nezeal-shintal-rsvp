@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dusty: #9db3c0;
+  --dusty-deep: #718d9b;
+  --beige: #eee8df;
+  --beige-deep: #d9cbb9;
+  --paper: #fbfaf7;
+  --ink: #31383c;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--beige);
+  color: var(--ink);
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+::selection { background: #b9cbd4; color: #243038; }
+
+@keyframes floatFlower {
+  0%,100% { transform: translate3d(0,0,0) rotate(-1deg); }
+  50% { transform: translate3d(0,-8px,0) rotate(1deg); }
+}
+@keyframes drift {
+  0% { transform: translateX(-5px) rotate(-2deg); opacity:.75; }
+  50% { transform: translateX(5px) rotate(2deg); opacity:1; }
+  100% { transform: translateX(-5px) rotate(-2deg); opacity:.75; }
+}
+@keyframes rise {
+  from { opacity:0; transform: translateY(22px); }
+  to { opacity:1; transform: translateY(0); }
+}
+@keyframes sealPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(127,154,168,.15); }
+  50% { box-shadow: 0 0 0 12px rgba(127,154,168,0); }
+}
+@keyframes shimmer {
+  0% { background-position: -500px 0; }
+  100% { background-position: 500px 0; }
+}
+
+.animate-float { animation: floatFlower 5s ease-in-out infinite; }
+.animate-drift { animation: drift 4.5s ease-in-out infinite; }
+.animate-rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+.animate-seal { animation: sealPulse 2.8s ease-in-out infinite; }
+
+.glass {
+  background: rgba(251,250,247,.74);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.72);
+}
+.paper-shadow {
+  box-shadow: 0 30px 80px rgba(71,73,68,.14), 0 6px 20px rgba(71,73,68,.08);
+}
+.flower-shadow { filter: drop-shadow(0 12px 12px rgba(78,93,101,.14)); }
+
+.flower {
+  position: absolute;
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #eadf9f 0 9%, transparent 10%),
+    radial-gradient(ellipse at 50% 18%, #dfe9ed 0 29%, transparent 30%),
+    radial-gradient(ellipse at 82% 50%, #d3e0e7 0 29%, transparent 30%),
+    radial-gradient(ellipse at 50% 82%, #c6d6df 0 29%, transparent 30%),
+    radial-gradient(ellipse at 18% 50%, #e2e9e9 0 29%, transparent 30%),
+    radial-gradient(ellipse at 25% 26%, #d2e0e7 0 24%, transparent 25%),
+    radial-gradient(ellipse at 75% 26%, #c8d8e0 0 24%, transparent 25%),
+    radial-gradient(ellipse at 75% 74%, #dbe4e8 0 24%, transparent 25%),
+    radial-gradient(ellipse at 25% 74%, #b9cbd4 0 24%, transparent 25%);
+  opacity: .95;
+}
+.flower.small { width: 54px; height:54px; transform: scale(.8); }
+.flower.big { width: 118px; height:118px; }
+
+.stem {
+  position:absolute; width:3px; height:130px; background:linear-gradient(#75918e,#9aae99);
+  transform-origin: bottom; border-radius:999px;
+}
+.leaf {
+  position:absolute; width:32px; height:16px; border-radius:100% 0 100% 0;
+  background:#b9c9b5; opacity:.8;
+}
+
+@media (max-width: 640px) {
+  .flower.big { width: 86px; height:86px; }
+  .flower { width: 68px; height:68px; }
+}
