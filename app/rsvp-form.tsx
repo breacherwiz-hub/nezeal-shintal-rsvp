@@ -70,7 +70,7 @@ export default function RSVPForm() {
     setSeat(guest.seat);
     setConfirmed(true);
     setCurrentGuest(guest);
-    setShowModal(true); // Open the popup modal right after clicking RSVP!
+    setShowModal(true);
 
     setStatus(attendance === "yes"
       ? (guest.seat ? `Thank you! Your assigned seat is ${guest.seat}.` : "Thank you! Your RSVP is confirmed. Your assigned seat will be provided by the couple.")
@@ -150,7 +150,7 @@ export default function RSVPForm() {
           </div>
         )}
 
-        <button className="w-full mt-7 rounded-full bg-[#718d9b] hover:bg-[#607b89] text-white py-3.5 text-xs font-bold tracking-[.2em] uppercase transition hover:-translate-y-0.5 cursor-pointer">
+        <button className="w-full mt-7 rounded-full bg-[#718d9b] hover:bg-[#607b89] text-white py-3.5 text-xs font-bold tracking-[.2em] uppercase transition hover:-translate-y-0.5 cursor-pointer shadow-lg shadow-slate-300/40">
           Submit RSVP
         </button>
 
@@ -161,9 +161,9 @@ export default function RSVPForm() {
             <button
               type="button"
               onClick={() => setShowModal(true)}
-              className="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-full bg-[#e8a572] hover:bg-[#de935c] text-white text-xs font-bold tracking-wider uppercase transition shadow-md shadow-[#e8a572]/25 cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#9db3c0] bg-white/70 hover:bg-white text-[#536b77] text-xs font-semibold tracking-[.15em] uppercase transition hover:-translate-y-0.5 cursor-pointer shadow-sm"
             >
-              🌸 View RSVP Confirmation Card
+              View Confirmation Card
             </button>
           </div>
         )}
@@ -186,63 +186,46 @@ export default function RSVPForm() {
         )}
       </form>
 
-      {/* Confirmation Modal Popup matching reference picture */}
+      {/* Confirmation Modal Popup - Perfectly Paired with Website Design */}
       {showModal && currentGuest && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/45 backdrop-blur-xs animate-rise">
           {/* Backdrop Click Dismiss */}
           <div className="fixed inset-0" onClick={() => setShowModal(false)} />
 
-          <div className="relative w-full max-w-[340px] sm:max-w-[370px] bg-white rounded-[32px] px-6 py-8 text-center shadow-2xl border border-slate-100 z-10">
+          <div className="relative w-full max-w-[350px] sm:max-w-[380px] bg-[#fcfbfa] rounded-[2rem] px-7 py-9 text-center paper-shadow border border-white/90 z-10">
             {/* Top Close Button */}
             <button
               type="button"
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg leading-none p-1 cursor-pointer"
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg leading-none p-1 cursor-pointer transition"
               aria-label="Close"
             >
               ✕
             </button>
 
-            {/* Blossom Circle Icon with Soft Halo */}
+            {/* Dusty Blue Monogram Wax Seal Emblem matching website stationery */}
             <div className="flex justify-center mb-5">
-              <div className="w-16 h-16 rounded-full bg-[#fef1f3] flex items-center justify-center border-2 border-white shadow-md shadow-pink-100">
-                <svg className="w-9 h-9" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  {/* Cherry Blossom Petals */}
-                  <g fill="#F8A7B5">
-                    <circle cx="50" cy="30" r="16" />
-                    <circle cx="69" cy="44" r="16" />
-                    <circle cx="62" cy="67" r="16" />
-                    <circle cx="38" cy="67" r="16" />
-                    <circle cx="31" cy="44" r="16" />
-                  </g>
-                  {/* Petal Inner Shading */}
-                  <g fill="#F28B9F">
-                    <circle cx="50" cy="34" r="9" />
-                    <circle cx="63" cy="44" r="9" />
-                    <circle cx="58" cy="60" r="9" />
-                    <circle cx="42" cy="60" r="9" />
-                    <circle cx="37" cy="44" r="9" />
-                  </g>
-                  {/* Flower Center Pistil */}
-                  <circle cx="50" cy="50" r="8" fill="#C95D74" />
-                  <circle cx="50" cy="50" r="4.5" fill="#E8B44A" />
-                  <circle cx="50" cy="50" r="2" fill="#8B263E" />
-                </svg>
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#e8eef0] to-[#d4e1e7] p-1 shadow-md shadow-slate-300/60 border border-white flex items-center justify-center">
+                <div className="w-full h-full rounded-full bg-[#718d9b] flex items-center justify-center text-white shadow-inner">
+                  <span className="font-display text-xl font-medium tracking-widest text-white select-none">
+                    N<span className="text-xs text-[#eedfd5] mx-0.5 font-sans font-light">&amp;</span>S
+                  </span>
+                </div>
               </div>
             </div>
 
             {/* Title */}
-            <h2 className="font-display text-3xl sm:text-4xl text-[#2c3d47] font-semibold tracking-tight mb-4">
+            <h2 className="font-display text-4xl text-[#536b77] leading-tight mb-2 tracking-tight">
               {currentGuest.attendance === "yes" ? "RSVP Received!" : "Response Received"}
             </h2>
 
             {/* Salutation */}
-            <p className="font-sans font-bold text-lg text-[#202c33] leading-snug mb-3">
+            <p className="font-display text-xl sm:text-2xl text-[#31383c] leading-snug mb-2 font-medium">
               Dear {currentGuest.name}{currentGuest.plusOne === "yes" && currentGuest.plusOneName ? ` & ${currentGuest.plusOneName}` : ""},
             </p>
 
             {/* Message */}
-            <p className="text-sm text-slate-500 leading-relaxed mb-6 font-normal">
+            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6 font-normal">
               {currentGuest.attendance === "yes" ? (
                 "Thank you! We are delighted you will be celebrating with us."
               ) : (
@@ -250,38 +233,40 @@ export default function RSVPForm() {
               )}
             </p>
 
-            {/* Highlighted Confirmation Box */}
+            {/* Highlighted Confirmation Box in Website's Dusty Blue/Beige Palette */}
             {currentGuest.attendance === "yes" ? (
-              <div className="bg-[#edf6f1] border border-[#cbe6d7] rounded-2xl p-4 sm:p-5 text-center mb-6">
-                <p className="text-sm font-bold text-[#1f543b] leading-snug">
-                  🌸 {currentGuest.seatsRequested || (currentGuest.plusOne === "yes" ? 2 : 1)} seat(s) confirmed{" "}
-                  <span className="font-normal text-[#2b6a4c]">for April 23, 2026.</span>
-                </p>
-                <p className="text-xs text-[#2b6a4c] mt-1.5 leading-relaxed">
-                  We look forward to seeing you at <strong>E&amp;J Grand Pavilion</strong>, Don Carlos Bukidnon!
+              <div className="rounded-2xl border border-[#d9e2e6] bg-[#f4f7f8] p-5 text-center mb-6 shadow-xs">
+                <div className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold text-[#536b77] uppercase tracking-wider mb-1">
+                  <span className="w-4 h-4 rounded-full bg-[#718d9b] text-white flex items-center justify-center text-[10px]">✓</span>
+                  <span>{currentGuest.seatsRequested || (currentGuest.plusOne === "yes" ? 2 : 1)} Seat(s) Confirmed</span>
+                </div>
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                  April 23, 2026 · 4:00 PM
+                  <br />
+                  <span className="font-medium text-[#536b77]">E&amp;J Grand Pavilion</span>, Don Carlos Bukidnon
                 </p>
 
                 {currentGuest.seat ? (
-                  <div className="mt-3 pt-2.5 border-t border-[#c2e2cf] text-xs font-semibold text-[#1f543b]">
-                    Assigned Seat: <span className="underline decoration-[#1f543b]">{currentGuest.seat}</span>
+                  <div className="mt-3 pt-2.5 border-t border-[#d9e2e6] text-xs font-semibold text-[#536b77]">
+                    Assigned Seat: <span className="font-display text-base font-bold text-[#31383c] ml-1">{currentGuest.seat}</span>
                   </div>
                 ) : (
-                  <div className="mt-3 pt-2.5 border-t border-[#c2e2cf] text-[11px] text-[#2b6a4c] italic">
+                  <div className="mt-3 pt-2.5 border-t border-[#d9e2e6] text-[11px] text-slate-400 italic">
                     Assigned seating details will be finalized by the couple.
                   </div>
                 )}
               </div>
             ) : (
-              <div className="bg-[#fbf9f6] border border-[#e8ded1] rounded-2xl p-4 text-center mb-6 text-xs text-slate-600">
+              <div className="rounded-2xl border border-[#d9e2e6] bg-[#f4f7f8] p-5 text-center mb-6 text-xs text-slate-500">
                 Your response has been recorded. Should your plans change, feel free to update your RSVP before March 30, 2026.
               </div>
             )}
 
-            {/* Done Button */}
+            {/* Done Button styled identically to the website's primary buttons */}
             <button
               type="button"
               onClick={() => setShowModal(false)}
-              className="w-36 sm:w-40 py-3 rounded-full bg-[#e8a572] hover:bg-[#de935c] active:scale-95 text-white font-bold text-sm tracking-wide shadow-md shadow-[#e8a572]/30 transition-all mx-auto block cursor-pointer"
+              className="w-36 sm:w-40 py-3 rounded-full bg-[#718d9b] hover:bg-[#607b89] active:scale-95 text-white text-xs font-bold tracking-[.2em] uppercase shadow-lg shadow-slate-300/40 transition hover:-translate-y-0.5 mx-auto block cursor-pointer"
             >
               Done
             </button>
