@@ -1,13 +1,9 @@
 import RSVPForm from "./rsvp-form";
 import FloralArt from "./floral-art";
-import HydrangeaRain from "./hydrangea-rain";
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden">
-      {/* Global falling hydrangea rain - fixed overlay across entire page */}
-      <HydrangeaRain />
-
       <section className="relative min-h-screen flex items-center justify-center px-5 py-12">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,.72),transparent_30%),radial-gradient(circle_at_80%_70%,rgba(191,207,213,.3),transparent_32%)]" />
         <FloralArt />
