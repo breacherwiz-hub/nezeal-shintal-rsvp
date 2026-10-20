@@ -25,8 +25,6 @@ export default function Home() {
               <Info label="VENUE" value="E&J Grand Pavilion" sub="Don Carlos, Bukidnon" />
             </div>
 
-            <p className="mt-9 text-sm text-slate-500">Dusty Blue &amp; Beige • Formal / Semi-Formal</p>
-
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href="#rsvp" className="inline-flex rounded-full bg-[#718d9b] text-white px-8 py-3.5 text-xs font-semibold tracking-[.2em] uppercase shadow-lg shadow-slate-300/40 hover:-translate-y-0.5 transition">
                 RSVP Now
