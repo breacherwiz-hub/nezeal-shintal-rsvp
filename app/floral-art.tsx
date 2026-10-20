@@ -33,21 +33,6 @@ export default function FloralArt({ subtle = false }: { subtle?: boolean }) {
             className="w-full h-auto object-contain transform -rotate-12 pointer-events-none"
           />
         </div>
-
-        {/* Bottom-Right Single blue hydrangea stem */}
-        <div
-          className="absolute -bottom-10 -right-10 sm:-bottom-16 sm:-right-14 w-52 sm:w-72 md:w-[340px] opacity-50 mix-blend-multiply pointer-events-none"
-          style={{
-            maskImage: "radial-gradient(circle at center, black 65%, transparent 100%)",
-            WebkitMaskImage: "radial-gradient(circle at center, black 65%, transparent 100%)",
-          }}
-        >
-          <img
-            src={`${basePath}/hydrangea-single.png`}
-            alt=""
-            className="w-full h-auto object-contain transform rotate-12 pointer-events-none"
-          />
-        </div>
       </div>
     );
   }
@@ -111,21 +96,6 @@ export default function FloralArt({ subtle = false }: { subtle?: boolean }) {
           src={`${basePath}/hydrangea-botanical.jpg`}
           alt=""
           className="w-full h-auto object-contain pointer-events-none transform rotate-180"
-        />
-      </div>
-
-      {/* Top Center — Single blue hydrangea stem, peeking in from the top */}
-      <div
-        className="absolute -top-24 left-1/2 -translate-x-1/2 w-44 sm:w-56 md:w-72 opacity-60 mix-blend-multiply pointer-events-none"
-        style={{
-          maskImage: "radial-gradient(ellipse at 50% 0%, black 50%, transparent 85%)",
-          WebkitMaskImage: "radial-gradient(ellipse at 50% 0%, black 50%, transparent 85%)",
-        }}
-      >
-        <img
-          src={`${basePath}/hydrangea-single.png`}
-          alt=""
-          className="w-full h-auto object-contain pointer-events-none transform rotate-6"
         />
       </div>
     </div>
